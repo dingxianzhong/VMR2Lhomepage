@@ -354,26 +354,120 @@
 
 
 
-
-<!-- Experiments and Results Section -->
 <section class="section">
   <div class="container">
-    <h3 class="subtitle has-text-centered">Experiments and Results</h3>
-    <div class="columns is-centered">
-      <div class="column is-half has-text-centered">
-        <figure>
-          <img src="static/images/fr_migration.png" alt="FR Results">
-          <figcaption>FR Results</figcaption>
-        </figure>
-      </div>
-      <div class="column is-half has-text-centered">
-        <figure>
-          <img src="static/images/fr_migration_time.png" alt="Latency Results">
-          <figcaption>Latency Results</figcaption>
-        </figure>
-      </div>
-    </div>
-    <p class="has-text-centered">VMR2L achieves superior results under a 5-second latency constraint.</p>
+    <!-- Centered Title -->
+    <h2 class="title has-text-centered">Experiments</h2>
+
+    <!-- Experiment 1: Latency Constraint -->
+    <ul style="text-align: left;">
+      <li style="margin-bottom: 2rem;">
+        <h3 class="subtitle">1) Latency Constraint</h3>
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            <figure>
+              <img src="readme-figures/fr_migration.png" alt="FR on Medium" style="width: 100%; height: auto;">
+              <figcaption style="text-align: left;">FR on Medium</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half has-text-centered">
+            <figure>
+              <img src="readme-figures/fr_migration_time.png" alt="Latency on Medium" style="width: 100%; height: auto;">
+              <figcaption style="text-align: left;">Latency on Medium</figcaption>
+            </figure>
+          </div>
+        </div>
+        <p class="has-text-left">
+          VMR2L beats all baselines under the five-second latency constraint.
+        </p>
+      </li>
+
+      <!-- Experiment 2: Ablation Studies -->
+      <li style="margin-bottom: 2rem;">
+        <h3 class="subtitle">2) Ablation Studies</h3>
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            <figure>
+              <img src="readme-figures/attention-ablation.png" alt="Sparse Attention Ablation" style="width: 100%; height: auto;">
+              <figcaption style="text-align: left;">Sparse Attention (Left)</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half has-text-centered">
+            <figure>
+              <img src="readme-figures/ablation-risk-seeking.png" alt="Risk-Seeking Evaluation" style="width: 100%; height: auto;">
+              <figcaption style="text-align: left;">Risk-Seeking Evaluation (Right)</figcaption>
+            </figure>
+          </div>
+        </div>
+      </li>
+
+      <!-- Experiment 3: Two-Stage Design -->
+      <li style="margin-bottom: 2rem;">
+        <h3 class="subtitle">3) Two-Stage Design</h3>
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <figure>
+              <img src="readme-figures/ablation-two-stage.png" alt="Two-Stage Design" style="width: 100%; height: auto;">
+              <figcaption style="text-align: left;">
+                Two-stage design allows VMR2L to handle different constraints.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </li>
+
+      <!-- Experiment 4: Generalization to Different Objectives -->
+      <li style="margin-bottom: 2rem;">
+        <h3 class="subtitle">4) Generalization to Different Objectives</h3>
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <figure>
+              <img src="readme-figures/diff-obj.png" alt="Different Objectives" style="width: 100%; height: auto;">
+              <figcaption style="text-align: left;">
+                VMR2L can generalize to different objectives, such as reaching an FR level with the minimal number of VM migrations.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </li>
+
+      <!-- Experiment 5: Abnormal Workload Levels -->
+      <li style="margin-bottom: 2rem;">
+        <h3 class="subtitle">5) Abnormal Workload Levels</h3>
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            <figure>
+              <img src="readme-figures/cpu-usage3.png" alt="CPU Usage" style="width: 100%; height: auto;">
+              <figcaption style="text-align: left;">CPU Usage</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half has-text-centered">
+            <figure>
+              <img src="readme-figures/workload-table.png" alt="Different Workloads" style="width: 100%; height: auto;">
+              <figcaption style="text-align: left;">Different Workloads</figcaption>
+            </figure>
+          </div>
+        </div>
+        <p class="has-text-left">
+          VMR2L can generalize to abnormal workload levels. Even when some workload levels are not present during training, as long as we have trained on a higher workload (or preferably a lower one too), we can cover those gaps!
+        </p>
+      </li>
+
+      <!-- Experiment 6: Policy Visualization -->
+      <li style="margin-bottom: 2rem;">
+        <h3 class="subtitle">6) Policy Visualization</h3>
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <figure>
+              <img src="readme-figures/visual-traj.gif" alt="Policy Visualization" style="width: 100%; height: auto;">
+              <figcaption style="text-align: left;">
+                A visualization of the learned rescheduling policy. It can be generated using <code>eval_plot_steps.py</code>.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
 
