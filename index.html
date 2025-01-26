@@ -290,31 +290,71 @@
 
 
 
+<section class="section">
+  <div class="container">
+    <!-- Centered Title -->
+    <h2 class="title has-text-centered">Model Details</h2>
 
-<!-- Model Details Section -->
-<section class="section hero">
-  <div class="container is-max-desktop">
+    <!-- Images for Two-Stage Framework -->
     <div class="columns is-centered">
-      <div class="column is-half has-text-centered">
+      <div class="column has-text-centered">
         <figure>
-          <img src="static/images/two-stage-model-vm.png" alt="Two-Stage Model VM">
+          <img src="static/images/two-stage-model-vm.png" alt="Two-Stage Agent (VM)" style="width: 100%; height: auto;">
         </figure>
       </div>
-      <div class="column is-half has-text-centered">
+      <div class="column has-text-centered">
         <figure>
-          <img src="static/images/two-stage-model-pm.png" alt="Two-Stage Model PM">
+          <img src="static/images/two-stage-model-pm.png" alt="Two-Stage Agent (PM)" style="width: 100%; height: auto;">
         </figure>
       </div>
     </div>
+
+    <!-- Two-Stage Framework -->
+    <h3 class="subtitle">Two-Stage Framework</h3>
+    <ul style="text-align: left; list-style-position: inside;">
+      <li>A VM request starts an episode. The action at each step in the episode is to migrate one VM. For example, if the model is allowed to reschedule 50 VMs, we let the model take 50 actions.</li>
+      <li>At each time step, the action is a two-tuple -- the VM to be rescheduled and its new destination PM. We design a two-stage agent, where the model chooses the VM in the first stage and then selects a destination PM in the second stage.</li>
+      <li>
+        <b>First stage:</b> a VM actor embeds all VMs and PMs via two shared embedding networks, based on which it selects a candidate VM.
+      </li>
+      <li>
+        <b>Second stage:</b> once a candidate VM is selected, VMR<sup>2</sup>L can efficiently mask out all the PMs that cannot host the candidate VM. The PM actor only has access to the embedding of the selected VM, instead of all VMs. PM actor then selects an appropriate destination PM from the remaining PMs.
+      </li>
+      <li>
+        <b>Benefit:</b> once a VM is selected, we can mask out all the illegal PMs to satisfy various service constraints (e.g., resource availability, affinity level).
+      </li>
+    </ul>
+
+    <!-- Sparse Attention Image -->
     <div class="columns is-centered">
       <div class="column is-full has-text-centered">
-        <figcaption>
-          The first stage of VMR<sup>2</sup>L processes all VMs and PMs via shared embedding networks. Once a candidate VM is selected, the second stage masks out invalid PMs, ensuring efficient rescheduling.
-        </figcaption>
+        <figure>
+          <img src="static/images/sparse-attn.png" alt="Sparse Attention" style="width: 100%; height: auto;">
+        </figure>
       </div>
     </div>
+
+    <!-- Feature Extraction with Sparse-Attention -->
+    <h3 class="subtitle">Feature Extraction with Sparse-Attention</h3>
+    <ul style="text-align: left; list-style-position: inside;">
+      <li>We use an attention-based model as the backbone as its number of learnable parameters is independent of the number of VMs and PMs.</li>
+      <li>We design a tree-level <b>sparse-attention</b> module to allow each VM/PM to exchange information with other machines under the same PM. This affiliation information is critical for VM rescheduling but is absent in vanilla attention.</li>
+    </ul>
+
+    <!-- Risk-Seeking Evaluation -->
+    <h3 class="subtitle">Risk-Seeking Evaluation</h3>
+    <ul style="text-align: left; list-style-position: inside;">
+      <li>Since we can exactly simulate the effect of VMR actions, we can sample multiple trajectories during inference time, and only deploy the one with the highest reward.</li>
+      <li>Actions with low probabilities are likely to be suboptimal, and we should avoid them during inference!</li>
+    </ul>
   </div>
 </section>
+
+
+
+
+
+
 
 <!-- Experiments and Results Section -->
 <section class="section">
