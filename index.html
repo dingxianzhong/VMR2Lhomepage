@@ -180,45 +180,134 @@
 </section>
 
 
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/css/styles.css">
+  <title>VM Rescheduling Framework</title>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">VM Rescheduling Framework</h1>
+        <h2 class="subtitle">Efficient and Optimized Virtual Machine Rescheduling</h2>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
+  </section>
+
+  <!-- Image Carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <img src="static/images/carousel1.jpg" alt="VM Scheduling">
+            <h2 class="subtitle has-text-centered">VM Scheduling Overview</h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel2.jpg" alt="VM Rescheduling">
+            <h2 class="subtitle has-text-centered">VM Rescheduling Process</h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel3.jpg" alt="Latency Constraints">
+            <h2 class="subtitle has-text-centered">Latency Requirements</h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel4.jpg" alt="Sparse Attention">
+            <h2 class="subtitle has-text-centered">Sparse Attention in Feature Extraction</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Sections -->
+  <section class="section">
+    <div class="container">
+      <h2 class="title">Background</h2>
+      <p>Modern industry-scale data centers receive many virtual machine (VM) requests per minute.</p>
+
+      <h3 class="subtitle">What is VM Scheduling and Rescheduling?</h3>
+      <div class="content">
+        <img src="static/images/initial-schedule.png" alt="VM Scheduling" width="50%">
+        <p>VM scheduling decides which PM to host the incoming VM when a new request arrives.</p>
+        <img src="static/images/reschedule.png" alt="VM Rescheduling" width="50%">
+        <p>VM rescheduling reassigns an already deployed VM to a new destination PM.</p>
+        <img src="static/images/throughput.png" alt="Throughput" width="50%">
+        <p>The above figure shows the maximum number of VMs changes per minute averaged over a 30-day period of a cluster from our in-house data center.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h3 class="subtitle">VM Rescheduling Details</h3>
+      <ul>
+        <li>Each cluster has no more than a few hundreds PMs, enabling tailored configuration and fault isolation.</li>
+        <li>Rescheduling leverages hot migration, requiring low overhead.</li>
+        <li>It is primarily applied to clusters hosting EC2 instances running for hours or days.</li>
+        <li>A migration number limit (MNL) ensures stability, typically at 2-3% of VMs.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h3 class="subtitle">Motivation: VM Rescheduling Latency Requirements</h3>
+      <img src="static/images/vm_generation_effect_new.png" alt="Latency Impact" width="60%">
+      <p>MIP solutions take an hour, rendering them invalid due to dynamic changes. A latency of 5 seconds ensures most rescheduling actions remain optimal.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h3 class="subtitle">Rescheduling Data Characteristics</h3>
+      <div class="content">
+        <img src="static/images/vm-types.png" alt="VM Types" width="45%">
+        <img src="static/images/fragment-size.png" alt="Fragment Sizes" width="45%">
+        <img src="static/images/utilization.png" alt="CPU Utilization" width="45%">
+        <p>Key statistics: 81.44% of PMs have CPU utilization over 80%, and 88.27% of VM requests are for 16 or fewer cores.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h3 class="subtitle">Why Reinforcement Learning (RL)?</h3>
+      <p>RL extracts features automatically, generalizes to new scenarios, and interacts cheaply with the environment. This avoids the limitations of supervised and heuristic models.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h3 class="subtitle">Model Details</h3>
+      <img src="static/images/two-stage-model-vm.png" alt="VM Model" width="40%">
+      <img src="static/images/two-stage-model-pm.png" alt="PM Model" width="50%">
+      <p>The two-stage framework selects a VM and its destination PM, satisfying service constraints efficiently.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h3 class="subtitle">Experiments and Results</h3>
+      <img src="static/images/fr_migration.png" alt="FR Results" width="40%">
+      <img src="static/images/fr_migration_time.png" alt="Latency Results" width="40%">
+      <p>VMR2L achieves superior results under a 5-second latency constraint.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>© 2024 VM Rescheduling Framework</p>
+    </div>
+  </footer>
+</body>
+</html>
+
 
 
 
