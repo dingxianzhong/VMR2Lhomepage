@@ -186,46 +186,50 @@
   <section class="section">
     <div class="container">
       <h2 class="title">Background</h2>
-      <h3 class="subtitle">What is VM Scheduling and Rescheduling?</h3>
-      <div class="columns is-centered">
-        <div class="column is-half has-text-centered">
-          <figure>
-            <img src="static/images/initial-schedule.png" alt="VM Scheduling">
-            <figcaption>VM scheduling decides which PM to host the incoming VM when a new request arrives.</figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-half has-text-centered">
-          <figure>
-            <img src="static/images/reschedule.png" alt="VM Rescheduling">
-            <figcaption>VM rescheduling reassigns an already deployed VM to a new destination PM.</figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-half has-text-centered">
-          <figure>
-            <img src="static/images/throughput.png" alt="Throughput">
-            <figcaption>The above figure shows the maximum number of VMs changes per minute averaged over a 30-day period of a cluster from our in-house data center.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VM Rescheduling Details Section -->
-  <section class="section">
-    <div class="container">
-      <h3 class="subtitle">VM Rescheduling Details</h3>
       <ul>
-        <li>Each cluster has no more than a few hundreds PMs, enabling tailored configuration and fault isolation.</li>
-        <li>Rescheduling leverages hot migration, requiring low overhead.</li>
-        <li>It is primarily applied to clusters hosting EC2 instances running for hours or days.</li>
-        <li>A migration number limit (MNL) ensures stability, typically at 2-3% of VMs.</li>
+        <!-- Bullet 1: What is VM Scheduling and Rescheduling? -->
+        <li>
+          <h3 class="subtitle">What is VM Scheduling and Rescheduling?</h3>
+          <div class="columns is-centered">
+            <div class="column is-half has-text-centered">
+              <figure>
+                <img src="static/images/initial-schedule.png" alt="VM Scheduling">
+                <figcaption>VM scheduling decides which PM to host the incoming VM when a new request arrives.</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="columns is-centered">
+            <div class="column is-half has-text-centered">
+              <figure>
+                <img src="static/images/reschedule.png" alt="VM Rescheduling">
+                <figcaption>VM rescheduling reassigns an already deployed VM to a new destination PM.</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="columns is-centered">
+            <div class="column is-half has-text-centered">
+              <figure>
+                <img src="static/images/throughput.png" alt="Throughput">
+                <figcaption>The above figure shows the maximum number of VMs changes per minute averaged over a 30-day period of a cluster from our in-house data center.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </li>
+  
+        <!-- Bullet 2: VM Rescheduling Details -->
+        <li>
+          <h3 class="subtitle">VM Rescheduling Details</h3>
+          <ul>
+            <li>Each cluster has no more than a few hundreds PMs, enabling tailored configuration and fault isolation.</li>
+            <li>Rescheduling leverages hot migration, requiring low overhead.</li>
+            <li>It is primarily applied to clusters hosting EC2 instances running for hours or days.</li>
+            <li>A migration number limit (MNL) ensures stability, typically at 2-3% of VMs.</li>
+          </ul>
+        </li>
       </ul>
     </div>
   </section>
+  
 
   <!-- Latency Requirements Section -->
   <section class="section">
