@@ -181,36 +181,44 @@
 
   <!-- Content Sections -->
   <!-- Background Section -->
-  <section class="section">
-    <div class="container">
-      <h2 class="title">Background</h2>
-      <h3 class="subtitle">What is VM Scheduling and Rescheduling?</h3>
-      <div class="columns is-centered">
-        <div class="column is-half has-text-centered">
-          <figure>
-            <img src="static/images/initial-schedule.png" alt="VM Scheduling">
-            <figcaption>VM scheduling decides which PM to host the incoming VM when a new request arrives.</figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-half has-text-centered">
-          <figure>
-            <img src="static/images/reschedule.png" alt="VM Rescheduling">
-            <figcaption>VM rescheduling reassigns an already deployed VM to a new destination PM.</figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-half has-text-centered">
-          <figure>
-            <img src="static/images/throughput.png" alt="Throughput">
-            <figcaption>The above figure shows the maximum number of VMs changes per minute averaged over a 30-day period of a cluster from our in-house data center.</figcaption>
-          </figure>
+<!-- Updated Background Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Background</h2>
+        <div class="content has-text-justified">
+          <p>
+            Modern industry-scale data centers need to manage a large number of virtual machines (VMs). Due to the continual creation and release of VMs, many small resource fragments are scattered across physical machines (PMs). To handle these fragments, data centers periodically reschedule some VMs to alternative PMs, a practice commonly referred to as VM rescheduling. Despite the increasing importance of VM rescheduling as data centers grow in size, the problem remains understudied. We first show that, unlike most combinatorial optimization tasks, the inference time of VM rescheduling algorithms significantly influences their performance, due to dynamic VM state changes during this period. This causes existing methods to scale poorly. Therefore, we develop a reinforcement learning system for VM rescheduling, VMR<sup>2</sup>L, which incorporates a set of customized techniques, such as a two-stage framework that accommodates diverse constraints and workload conditions, a feature extraction module that captures relational information specific to rescheduling, as well as a risk-seeking evaluation enabling users to optimize the trade-off between latency and accuracy. We conduct extensive experiments with data from an industry-scale data center. Our results show that VMR<sup>2</sup>L can achieve a performance comparable to the optimal solution but with a running time of seconds.
+          </p>
         </div>
       </div>
     </div>
-  </section>
+    <div class="columns is-centered">
+      <!-- Figure 1 -->
+      <div class="column is-one-third has-text-centered">
+        <figure>
+          <img src="static/images/initial-schedule.png" alt="VM Scheduling">
+          <figcaption>VM scheduling decides which PM to host the incoming VM when a new request arrives.</figcaption>
+        </figure>
+      </div>
+      <!-- Figure 2 -->
+      <div class="column is-one-third has-text-centered">
+        <figure>
+          <img src="static/images/reschedule.png" alt="VM Rescheduling">
+          <figcaption>VM rescheduling reassigns an already deployed VM to a new destination PM.</figcaption>
+        </figure>
+      </div>
+      <!-- Figure 3 -->
+      <div class="column is-one-third has-text-centered">
+        <figure>
+          <img src="static/images/throughput.png" alt="Throughput">
+          <figcaption>The above figure shows the maximum number of VMs changes per minute averaged over a 30-day period of a cluster from our in-house data center.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- VM Rescheduling Details Section -->
   <section class="section">
