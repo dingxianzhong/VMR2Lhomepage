@@ -182,55 +182,59 @@
   <!-- Content Sections -->
   <section class="section">
     <div class="container is-max-desktop">
+      <!-- Background Title -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Background</h2>
-          <div class="content has-text-justified">
-            <ul>
-              <!-- Bullet 1: What is VM Scheduling and Rescheduling -->
-              <li>
-                <h3 class="subtitle">What is VM Scheduling and Rescheduling?</h3>
-                <div class="columns is-centered">
-                  <!-- Figure 1 -->
-                  <div class="column is-one-third has-text-centered">
-                    <figure>
-                      <img src="static/images/initial-schedule.png" alt="VM Scheduling">
-                    </figure>
-                  </div>
-                  <!-- Figure 2 -->
-                  <div class="column is-one-third has-text-centered">
-                    <figure>
-                      <img src="static/images/reschedule.png" alt="VM Rescheduling">
-                    </figure>
-                  </div>
-                  <!-- Figure 3 -->
-                  <div class="column is-one-third has-text-centered">
-                    <figure>
-                      <img src="static/images/throughput.png" alt="Throughput">
-                    </figure>
-                  </div>
-                </div>
-                <div class="columns is-centered">
-                  <div class="column is-full has-text-centered">
-                    <figcaption>
-                      VM scheduling decides which PM to host the incoming VM when a new request arrives. VM rescheduling reassigns an already deployed VM to a new destination PM. The above figure shows the maximum number of VMs changes per minute averaged over a 30-day period of a cluster from our in-house data center. VM scheduling algorithms need to be run throughout the day, so they must be able to handle a level of workload indicated by the green line. Rescheduling is typically run during off-peak hours, handling a lower level of workload (red dot).
-                    </figcaption>
-                  </div>
-                </div>
-              </li>
+        </div>
+      </div>
   
-              <!-- Bullet 2: VM Rescheduling Details -->
-              <li>
-                <h3 class="subtitle">VM Rescheduling Details</h3>
-                <ul class="has-text-left">
-                  <li>Each cluster has no more than a few hundreds PMs, enabling tailored configuration and fault isolation.</li>
-                  <li>Rescheduling leverages hot migration, requiring low overhead.</li>
-                  <li>It is primarily applied to clusters hosting EC2 instances running for hours or days.</li>
-                  <li>A migration number limit (MNL) ensures stability, typically at 2-3% of VMs.</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+      <!-- Bullet 1: What is VM Scheduling and Rescheduling? -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <ul>
+            <li>
+              <h3 class="subtitle">What is VM Scheduling and Rescheduling?</h3>
+              <div class="columns is-centered">
+                <!-- Full-width Figures -->
+                <div class="column is-full">
+                  <figure>
+                    <img src="static/images/initial-schedule.png" alt="VM Scheduling" style="width: 100%; height: auto;">
+                  </figure>
+                </div>
+                <div class="column is-full">
+                  <figure>
+                    <img src="static/images/reschedule.png" alt="VM Rescheduling" style="width: 100%; height: auto;">
+                  </figure>
+                </div>
+                <div class="column is-full">
+                  <figure>
+                    <img src="static/images/throughput.png" alt="Throughput" style="width: 100%; height: auto;">
+                  </figure>
+                </div>
+              </div>
+              <p class="has-text-justified">
+                VM scheduling decides which PM to host the incoming VM when a new request arrives. VM rescheduling reassigns an already deployed VM to a new destination PM. The above figure shows the maximum number of VMs changes per minute averaged over a 30-day period of a cluster from our in-house data center. VM scheduling algorithms need to be run throughout the day, so they must be able to handle a level of workload indicated by the green line. Rescheduling is typically run during off-peak hours, handling a lower level of workload (red dot).
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Bullet 2: VM Rescheduling Details -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <ul>
+            <li>
+              <h3 class="subtitle">VM Rescheduling Details</h3>
+              <ul class="has-text-left">
+                <li>Each cluster has no more than a few hundreds PMs, enabling tailored configuration and fault isolation.</li>
+                <li>Rescheduling leverages hot migration, requiring low overhead.</li>
+                <li>It is primarily applied to clusters hosting EC2 instances running for hours or days.</li>
+                <li>A migration number limit (MNL) ensures stability, typically at 2-3% of VMs.</li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
