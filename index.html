@@ -144,14 +144,14 @@
       <div class="column has-text-centered">
         <figure>
           <img src="static/images/two-stage-model-vm.png" alt="Two-Stage Model VM">
-          <figcaption>Two-Stage Model: Virtual Machine Perspective</figcaption>
+          <figcaption>The first stage of VMR<sup>2</sup>L  processes all VMs and PMs via shared embedding networks, based on which the VM actor selects a VM to be rescheduled.</figcaption>
         </figure>
       </div>
 
       <div class="column has-text-centered">
         <figure>
           <img src="static/images/two-stage-model-pm.png" alt="Two-Stage Model PM">
-          <figcaption>Two-Stage Model: Physical Machine Perspective</figcaption>
+          <figcaption>Once a candidate VM is selected by the VM actor, VMR<sup>2</sup>L masks out all the PMs that cannot host the candidate VM. The PM actor only accesses the selected VM, and then selects a destination PM from the unmasked PMs.</figcaption>
         </figure>
       </div>      
     </div>
