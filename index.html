@@ -180,15 +180,11 @@
 </section>
 
 
-<!-- Content Sections -->
-<!-- Background Section -->
-<!-- Background Section -->
 <section class="section">
   <div class="container">
     <!-- Centered Title -->
     <h2 class="title has-text-centered">Background</h2>
-    
-    <!-- Left-aligned Bullets -->
+
     <!-- Left-aligned Bullets -->
     <ul style="text-align: left;">
       <!-- Bullet 1: What is VM Scheduling and Rescheduling? -->
@@ -224,10 +220,9 @@
           </div>
         </div>
       </li>
-    </ul>
 
       <!-- Bullet 2: VM Rescheduling Details -->
-      <li>
+      <li style="margin-bottom: 2rem;">
         <h3 class="subtitle">2) VM Rescheduling Details</h3>
         <ul style="text-align: left; list-style-position: inside;">
           <li>Each cluster has no more than a few hundreds PMs, enabling tailored configuration and fault isolation.</li>
@@ -236,62 +231,65 @@
           <li>A migration number limit (MNL) ensures stability, typically at 2-3% of VMs.</li>
         </ul>
       </li>
+
+      <!-- Bullet 3: Motivation - VM Rescheduling Latency Requirements -->
+      <li style="margin-bottom: 2rem;">
+        <h3 class="subtitle">3) Motivation: VM Rescheduling Latency Requirements</h3>
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            <figure>
+              <img src="static/images/vm_generation_effect_new.png" alt="Latency Impact" style="width: 100%; height: auto;">
+              <figcaption style="text-align: left;">
+                MIP solutions take an hour, rendering them invalid due to dynamic changes. A latency of 5 seconds ensures most rescheduling actions remain optimal.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </li>
+
+      <!-- Bullet 4: Rescheduling Data Characteristics -->
+      <li style="margin-bottom: 2rem;">
+        <h3 class="subtitle">4) Rescheduling Data Characteristics</h3>
+        <div class="columns is-centered">
+          <div class="column is-one-third has-text-centered">
+            <figure>
+              <img src="static/images/vm-types.png" alt="VM Types" style="width: 100%; height: auto;">
+              <figcaption style="text-align: left;">VM Types</figcaption>
+            </figure>
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <figure>
+              <img src="static/images/fragment-size.png" alt="Fragment Sizes" style="width: 100%; height: auto;">
+              <figcaption style="text-align: left;">Fragment Sizes</figcaption>
+            </figure>
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <figure>
+              <img src="static/images/utilization.png" alt="CPU Utilization" style="width: 100%; height: auto;">
+              <figcaption style="text-align: left;">CPU Utilization</figcaption>
+            </figure>
+          </div>
+        </div>
+        <p class="has-text-left">
+          Key statistics: 81.44% of PMs have CPU utilization over 80%, and 88.27% of VM requests are for 16 or fewer cores.
+        </p>
+      </li>
+
+      <!-- Bullet 5: Why Reinforcement Learning -->
+      <li style="margin-bottom: 2rem;">
+        <h3 class="subtitle">5) Why Reinforcement Learning (RL)?</h3>
+        <p class="has-text-left">
+          RL extracts features automatically, generalizes to new scenarios, and interacts cheaply with the environment. This avoids the limitations of supervised and heuristic models.
+        </p>
+      </li>
     </ul>
   </div>
 </section>
 
 
 
-<!-- Latency Requirements Section -->
-<section class="section">
-  <div class="container">
-    <h3 class="subtitle has-text-centered">Motivation: VM Rescheduling Latency Requirements</h3>
-    <div class="columns is-centered">
-      <div class="column is-half has-text-centered">
-        <figure>
-          <img src="static/images/vm_generation_effect_new.png" alt="Latency Impact">
-          <figcaption>MIP solutions take an hour, rendering them invalid due to dynamic changes. A latency of 5 seconds ensures most rescheduling actions remain optimal.</figcaption>
-        </figure>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Rescheduling Data Characteristics Section -->
-<section class="section">
-  <div class="container">
-    <h3 class="subtitle has-text-centered">Rescheduling Data Characteristics</h3>
-    <div class="columns is-centered">
-      <div class="column is-one-third has-text-centered">
-        <figure>
-          <img src="static/images/vm-types.png" alt="VM Types">
-          <figcaption>VM Types</figcaption>
-        </figure>
-      </div>
-      <div class="column is-one-third has-text-centered">
-        <figure>
-          <img src="static/images/fragment-size.png" alt="Fragment Sizes">
-          <figcaption>Fragment Sizes</figcaption>
-        </figure>
-      </div>
-      <div class="column is-one-third has-text-centered">
-        <figure>
-          <img src="static/images/utilization.png" alt="CPU Utilization">
-          <figcaption>CPU Utilization</figcaption>
-        </figure>
-      </div>
-    </div>
-    <p class="has-text-centered">Key statistics: 81.44% of PMs have CPU utilization over 80%, and 88.27% of VM requests are for 16 or fewer cores.</p>
-  </div>
-</section>
 
-<!-- Reinforcement Learning Section -->
-<section class="section">
-  <div class="container">
-    <h3 class="subtitle has-text-centered">Why Reinforcement Learning (RL)?</h3>
-    <p class="has-text-centered">RL extracts features automatically, generalizes to new scenarios, and interacts cheaply with the environment. This avoids the limitations of supervised and heuristic models.</p>
-  </div>
-</section>
 
 <!-- Model Details Section -->
 <section class="section hero">
