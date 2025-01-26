@@ -179,24 +179,40 @@
   </div>
 </section>
 
-
   <!-- Content Sections -->
   <!-- Background Section -->
   <section class="section">
     <div class="container">
       <h2 class="title">Background</h2>
       <h3 class="subtitle">What is VM Scheduling and Rescheduling?</h3>
-      <div class="content">
-        <img src="static/images/initial-schedule.png" alt="VM Scheduling" width="50%">
-        <p>VM scheduling decides which PM to host the incoming VM when a new request arrives.</p>
-        <img src="static/images/reschedule.png" alt="VM Rescheduling" width="50%">
-        <p>VM rescheduling reassigns an already deployed VM to a new destination PM.</p>
-        <img src="static/images/throughput.png" alt="Throughput" width="50%">
-        <p>The above figure shows the maximum number of VMs changes per minute averaged over a 30-day period of a cluster from our in-house data center.</p>
+      <div class="columns is-centered">
+        <div class="column is-half has-text-centered">
+          <figure>
+            <img src="static/images/initial-schedule.png" alt="VM Scheduling">
+            <figcaption>VM scheduling decides which PM to host the incoming VM when a new request arrives.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-half has-text-centered">
+          <figure>
+            <img src="static/images/reschedule.png" alt="VM Rescheduling">
+            <figcaption>VM rescheduling reassigns an already deployed VM to a new destination PM.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-half has-text-centered">
+          <figure>
+            <img src="static/images/throughput.png" alt="Throughput">
+            <figcaption>The above figure shows the maximum number of VMs changes per minute averaged over a 30-day period of a cluster from our in-house data center.</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- VM Rescheduling Details Section -->
   <section class="section">
     <div class="container">
       <h3 class="subtitle">VM Rescheduling Details</h3>
@@ -209,50 +225,104 @@
     </div>
   </section>
 
+  <!-- Latency Requirements Section -->
   <section class="section">
     <div class="container">
       <h3 class="subtitle">Motivation: VM Rescheduling Latency Requirements</h3>
-      <img src="static/images/vm_generation_effect_new.png" alt="Latency Impact" width="60%">
-      <p>MIP solutions take an hour, rendering them invalid due to dynamic changes. A latency of 5 seconds ensures most rescheduling actions remain optimal.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h3 class="subtitle">Rescheduling Data Characteristics</h3>
-      <div class="content">
-        <img src="static/images/vm-types.png" alt="VM Types" width="45%">
-        <img src="static/images/fragment-size.png" alt="Fragment Sizes" width="45%">
-        <img src="static/images/utilization.png" alt="CPU Utilization" width="45%">
-        <p>Key statistics: 81.44% of PMs have CPU utilization over 80%, and 88.27% of VM requests are for 16 or fewer cores.</p>
+      <div class="columns is-centered">
+        <div class="column is-half has-text-centered">
+          <figure>
+            <img src="static/images/vm_generation_effect_new.png" alt="Latency Impact">
+            <figcaption>MIP solutions take an hour, rendering them invalid due to dynamic changes. A latency of 5 seconds ensures most rescheduling actions remain optimal.</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Rescheduling Data Characteristics Section -->
+  <section class="section">
+    <div class="container">
+      <h3 class="subtitle">Rescheduling Data Characteristics</h3>
+      <div class="columns is-centered">
+        <div class="column is-one-third has-text-centered">
+          <figure>
+            <img src="static/images/vm-types.png" alt="VM Types">
+            <figcaption>VM Types</figcaption>
+          </figure>
+        </div>
+        <div class="column is-one-third has-text-centered">
+          <figure>
+            <img src="static/images/fragment-size.png" alt="Fragment Sizes">
+            <figcaption>Fragment Sizes</figcaption>
+          </figure>
+        </div>
+        <div class="column is-one-third has-text-centered">
+          <figure>
+            <img src="static/images/utilization.png" alt="CPU Utilization">
+            <figcaption>CPU Utilization</figcaption>
+          </figure>
+        </div>
+      </div>
+      <p class="has-text-centered">Key statistics: 81.44% of PMs have CPU utilization over 80%, and 88.27% of VM requests are for 16 or fewer cores.</p>
+    </div>
+  </section>
+
+  <!-- Reinforcement Learning Section -->
   <section class="section">
     <div class="container">
       <h3 class="subtitle">Why Reinforcement Learning (RL)?</h3>
-      <p>RL extracts features automatically, generalizes to new scenarios, and interacts cheaply with the environment. This avoids the limitations of supervised and heuristic models.</p>
+      <p class="has-text-centered">RL extracts features automatically, generalizes to new scenarios, and interacts cheaply with the environment. This avoids the limitations of supervised and heuristic models.</p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <h3 class="subtitle">Model Details</h3>
-      <img src="static/images/two-stage-model-vm.png" alt="VM Model" width="40%">
-      <img src="static/images/two-stage-model-pm.png" alt="PM Model" width="50%">
-      <p>The two-stage framework selects a VM and its destination PM, satisfying service constraints efficiently.</p>
+  <!-- Model Details Section -->
+  <section class="section hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-half has-text-centered">
+          <figure>
+            <img src="static/images/two-stage-model-vm.png" alt="Two-Stage Model VM">
+          </figure>
+        </div>
+        <div class="column is-half has-text-centered">
+          <figure>
+            <img src="static/images/two-stage-model-pm.png" alt="Two-Stage Model PM">
+          </figure>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-full has-text-centered">
+          <figcaption>
+            The first stage of VMR<sup>2</sup>L processes all VMs and PMs via shared embedding networks. Once a candidate VM is selected, the second stage masks out invalid PMs, ensuring efficient rescheduling.
+          </figcaption>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- Experiments and Results Section -->
   <section class="section">
     <div class="container">
       <h3 class="subtitle">Experiments and Results</h3>
-      <img src="static/images/fr_migration.png" alt="FR Results" width="40%">
-      <img src="static/images/fr_migration_time.png" alt="Latency Results" width="40%">
-      <p>VMR2L achieves superior results under a 5-second latency constraint.</p>
+      <div class="columns is-centered">
+        <div class="column is-half has-text-centered">
+          <figure>
+            <img src="static/images/fr_migration.png" alt="FR Results">
+            <figcaption>FR Results</figcaption>
+          </figure>
+        </div>
+        <div class="column is-half has-text-centered">
+          <figure>
+            <img src="static/images/fr_migration_time.png" alt="Latency Results">
+            <figcaption>Latency Results</figcaption>
+          </figure>
+        </div>
+      </div>
+      <p class="has-text-centered">VMR2L achieves superior results under a 5-second latency constraint.</p>
     </div>
   </section>
+
 
 
 
