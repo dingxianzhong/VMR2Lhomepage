@@ -233,19 +233,42 @@
       </li>
 
       <!-- Bullet 3: Motivation - VM Rescheduling Latency Requirements -->
-      <li style="margin-bottom: 2rem;">
-        <h3 class="subtitle">3) Motivation: VM Rescheduling Latency Requirements</h3>
-        <div class="columns is-centered">
-          <div class="column is-half has-text-centered">
-            <figure>
-              <img src="static/images/vm_generation_effect_new.png" alt="Latency Impact" style="width: 100%; height: auto;">
-              <figcaption style="text-align: left;">
-                MIP solutions take an hour, rendering them invalid due to dynamic changes. A latency of 5 seconds ensures most rescheduling actions remain optimal.
-              </figcaption>
-            </figure>
-          </div>
+    <!-- Bullet 3: Motivation - VM Rescheduling Latency Requirements -->
+    <li style="margin-bottom: 2rem;">
+      <h3 class="subtitle">3) Motivation: VM Rescheduling Latency Requirements</h3>
+      <div class="columns is-centered">
+
+        <!-- Image 2: Fragment MIP Heuristic Initial FR -->
+        <div class="column is-one-third has-text-centered">
+          <figure>
+            <img src="static/images/frag_mip_heurstic_initial_fr.png" alt="Fragment MIP Heuristic Initial FR" style="width: 100%; height: auto;">
+            <figcaption style="text-align: left;">
+              Comparison of initial FR between MIP and heuristic methods under varying workload levels.
+            </figcaption>
+          </figure>
         </div>
-      </li>
+        <!-- Image 3: Time MIP Heuristic -->
+        <div class="column is-one-third has-text-centered">
+          <figure>
+            <img src="static/images/time_mip_heurstic.png" alt="Time MIP Heuristic" style="width: 100%; height: auto;">
+            <figcaption style="text-align: left;">
+              Evaluation of time taken by MIP and heuristic methods for rescheduling actions.
+            </figcaption>
+          </figure>
+        </div>
+        <!-- Image 1: Latency Impact -->
+        <div class="column is-one-third has-text-centered">
+          <figure>
+            <img src="static/images/vm_generation_effect_new.png" alt="Latency Impact" style="width: 100%; height: auto;">
+            <figcaption style="text-align: left;">
+              MIP solutions take an hour, rendering them invalid due to dynamic changes. A latency of 5 seconds ensures most rescheduling actions remain optimal.
+            </figcaption>
+          </figure>
+        </div>
+
+      </div>
+    </li>
+
 
       <!-- Bullet 4: Rescheduling Data Characteristics -->
       <li style="margin-bottom: 2rem;">
