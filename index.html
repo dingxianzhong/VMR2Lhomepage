@@ -351,15 +351,13 @@
     <!-- Feature Extraction with Sparse-Attention -->
     <h3 class="subtitle">2) Feature Extraction with Sparse-Attention</h3>
     <ul style="text-align: left; list-style-position: inside;">
-      <li style="margin-bottom: 2rem;">We use an attention-based model as the backbone as its number of learnable parameters is independent of the number of VMs and PMs.</li>
-      <li style="margin-bottom: 2rem;">We design a tree-level <b>sparse-attention</b> module to allow each VM/PM to exchange information with other machines under the same PM. This affiliation information is critical for VM rescheduling but is absent in vanilla attention.</li>
+      <li>We use an attention-based model as the backbone as its number of learnable parameters is independent of the number of VMs and PMs. We design a tree-level <b>sparse-attention</b> module to allow each VM/PM to exchange information with other machines under the same PM. This affiliation information is critical for VM rescheduling but is absent in vanilla attention.</li>
     </ul>
 
     <!-- Risk-Seeking Evaluation -->
     <h3 class="subtitle">3) Risk-Seeking Evaluation</h3>
     <ul style="text-align: left; list-style-position: inside;">
-      <li style="margin-bottom: 2rem;">Since we can exactly simulate the effect of VMR actions, we can sample multiple trajectories during inference time, and only deploy the one with the highest reward.</li>
-      <li style="margin-bottom: 2rem;">Actions with low probabilities are likely to be suboptimal, and we should avoid them during inference!</li>
+      <li>Since we can exactly simulate the effect of VMR actions, we can sample multiple trajectories during inference time, and only deploy the one with the highest reward. Actions with low probabilities are likely to be suboptimal, and we should avoid them during inference!</li>
     </ul>
   </div>
 </section>
