@@ -325,9 +325,9 @@
 
     <!-- Two-Stage Framework -->
     <h3 class="subtitle">1) Two-Stage Framework</h3>
-    <ul style="text-align: left; list-style-position: inside;">
-      <li style="margin-bottom: 2rem;">A VM request starts an episode. The action at each step in the episode is to migrate one VM. For example, if the model is allowed to reschedule 50 VMs, we let the model take 50 actions.</li>
-      <li style="margin-bottom: 2rem;">At each time step, the action is a two-tuple -- the VM to be rescheduled and its new destination PM. We design a two-stage agent, where the model chooses the VM in the first stage and then selects a destination PM in the second stage.</li>
+    <!-- <ul style="text-align: left; list-style-position: inside;"> -->
+      <ul style="text-align: left; list-style-position: inside; list-style-type: disc;">  
+      <li style="margin-bottom: 2rem;">A VM request starts an episode. The action at each step in the episode is to migrate one VM. For example, if the model is allowed to reschedule 50 VMs, we let the model take 50 actions. At each time step, the action is a two-tuple -- the VM to be rescheduled and its new destination PM. We design a two-stage agent, where the model chooses the VM in the first stage and then selects a destination PM in the second stage.</li>
       <li style="margin-bottom: 2rem;">
         <b>First stage:</b> a VM actor embeds all VMs and PMs via two shared embedding networks, based on which it selects a candidate VM.
       </li>
