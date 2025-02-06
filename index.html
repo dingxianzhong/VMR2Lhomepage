@@ -242,7 +242,8 @@
             <figure>
               <img src="static/images/motivation_combine_two.png" alt="Motivation Combined" style="width: 100%; height: auto;">
               <figcaption style="text-align: left;">
-                A combined analysis of initial FR and time taken by MIP and heuristic methods under varying workload levels.
+                <strong>Fig. \ref{fig: motivation_exp} (left):</strong> 
+                The FR performance of MIP and HA under different migration number limits (MNLs). MIP achieves a lower FR compared to HA as it guarantees a near-optimal solution. The FR gap grows as the MNL increases, since HA prioritizes actions leading to the largest immediate drop in FR. Beyond 25 VMs, HA cannot further reduce FR.
               </figcaption>
             </figure>
           </div>
@@ -252,7 +253,8 @@
             <figure>
               <img src="static/images/vm_generation_effect_eblow_point.png" alt="Latency Impact" style="width: 100%; height: auto;">
               <figcaption style="text-align: left;">
-                MIP solutions take an hour, rendering them invalid due to dynamic changes. A latency of 5 seconds ensures most rescheduling actions remain optimal.
+                <strong>Fig. \ref{fig: motivation_exp} (right):</strong> 
+                As MNL increases from 25 to 50, MIP's computation time grows exponentially, from 1.78 minutes to 50.55 minutes. This latency is unacceptable in dynamic data centers where VM requests continuously arrive. The green line indicates a required inference time limit of 5 seconds to ensure feasible deployment of rescheduling actions.
               </figcaption>
             </figure>
           </div>
