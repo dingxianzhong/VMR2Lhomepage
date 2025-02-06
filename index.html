@@ -327,14 +327,14 @@
     <h3 class="subtitle">1) Two-Stage Framework</h3>
     <!-- <ul style="text-align: left; list-style-position: inside;"> -->
       <ul style="text-align: left; list-style-position: inside; list-style-type: disc;">  
-      <li style="margin-bottom: 2rem;">A VM request starts an episode. The action at each step in the episode is to migrate one VM. For example, if the model is allowed to reschedule 50 VMs, we let the model take 50 actions. At each time step, the action is a two-tuple -- the VM to be rescheduled and its new destination PM. We design a two-stage agent, where the model chooses the VM in the first stage and then selects a destination PM in the second stage.</li>
-      <li style="margin-bottom: 2rem;">
+      <li>A VM request starts an episode. The action at each step in the episode is to migrate one VM. For example, if the model is allowed to reschedule 50 VMs, we let the model take 50 actions. At each time step, the action is a two-tuple -- the VM to be rescheduled and its new destination PM. We design a two-stage agent, where the model chooses the VM in the first stage and then selects a destination PM in the second stage.</li>
+      <li>
         <b>First stage:</b> a VM actor embeds all VMs and PMs via two shared embedding networks, based on which it selects a candidate VM.
       </li>
-      <li style="margin-bottom: 2rem;">
+      <li>
         <b>Second stage:</b> once a candidate VM is selected, VMR<sup>2</sup>L can efficiently mask out all the PMs that cannot host the candidate VM. The PM actor only has access to the embedding of the selected VM, instead of all VMs. PM actor then selects an appropriate destination PM from the remaining PMs.
       </li>
-      <li style="margin-bottom: 2rem;">
+      <li>
         <b>Benefit:</b> once a VM is selected, we can mask out all the illegal PMs to satisfy various service constraints (e.g., resource availability, affinity level).
       </li>
     </ul>
