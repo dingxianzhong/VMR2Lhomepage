@@ -242,7 +242,7 @@
             <figure>
               <img src="static/images/motivation_combine_two.png" alt="Motivation Combined" style="width: 100%; height: auto;">
               <figcaption style="text-align: left;">
-                The Fragment Rate(FR) performance of MIP and HA under different MNLs. MIP achieves a lower FR compared to HA as it guarantees a near-optimal solution. The FR gap grows as the MNL increases, since HA prioritizes actions leading to the largest immediate drop in FR. Beyond 25 VMs, HA cannot further reduce FR.
+                The Fragment Rate (FR) of MIP outperforms HA under varying MNLs, with MIP guaranteeing near-optimal solutions but requiring exponential computation time (1.78 to 50.55 minutes). A 5-second inference limit ensures feasibility in dynamic data centers.
               </figcaption>
             </figure>
           </div>
@@ -252,7 +252,7 @@
             <figure>
               <img src="static/images/vm_generation_effect_eblow_point.png" alt="Latency Impact" style="width: 100%; height: auto;">
               <figcaption style="text-align: left;">
-                As MNL increases from 25 to 50, MIP's computation time grows exponentially, from 1.78 minutes to 50.55 minutes. This latency is unacceptable in dynamic data centers where VM requests continuously arrive. The green line indicates a required inference time limit of 5 seconds to ensure feasible deployment of rescheduling actions.
+              The MIP solution remains near-optimal if computed within five seconds, as indicated by the "elbow point." Beyond this, FR reduction diminishes rapidly, necessitating a strict five-second limit for inference to maintain effectiveness.
               </figcaption>
             </figure>
           </div>
